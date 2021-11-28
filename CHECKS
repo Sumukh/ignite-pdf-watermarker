@@ -1,0 +1,4 @@
+# Zero Time Deployments
+WAIT=5
+ATTEMPTS=6
+/

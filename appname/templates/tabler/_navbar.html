@@ -1,0 +1,58 @@
+<div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 ml-auto">
+                <form class="input-icon my-3 my-lg-0">
+                    <input type="search" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+                    <div class="input-icon-addon">
+                        <i class="fe fe-search"></i>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg order-lg-first">
+                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item {{ 'active' if request.blueprint == 'dashboard_home' }}">
+                        <a href="{{ url_for('dashboard_home.index') }}" class="nav-link {{ 'active' if request.endpoint == 'dashboard_home.index' }}">
+                            <i class="fe fe-home"></i> Home
+                        </a>
+                    </li>
+                    {% if team %}
+                    <li class="nav-item {{ 'active' if request.blueprint == 'dashboard_team' }}">
+                        <a href="{{ url_for('dashboard_team.index', team_id=team.id) }}" class="nav-link  {{ 'active' if request.endpoint == 'dashboard_team.index' }}">
+                            <i class="fe fe-users"></i> Your Team
+                        </a>
+                    </li>
+                    <li class="nav-item {{ 'active' if request.blueprint == 'dashboard_files' }}">
+                        <a href="{{ url_for('dashboard_files.index', team_id=team.id) }}" class="nav-link  {{ 'active' if request.endpoint == 'dashboard_files.index' }}">
+                            <i class="fe fe-file"></i> Shared Files
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
+                            <i class="fe fe-box"></i> Dropdown</a>
+                        <div class="dropdown-menu dropdown-menu-arrow">
+                            <a href="#" class="dropdown-item">Menu Item 1</a>
+                            <a href="#" class="dropdown-item ">Menu Item 2</a>
+                            <a href="#" class="dropdown-item ">Menu Item 3</a>
+                        </div>
+                    </li>
+
+                    {% endif %}
+                    <li class="nav-item {{ 'active' if request.endpoint.startswith('user_settings') }}">
+                        <a href="{{ url_for('user_settings.index') }}" class="nav-link  {{ 'active' if request.endpoint.startswith('user_settings') }}">
+                            <i class="fe fe-settings"></i> User Settings
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item {{ 'active' if request.endpoint == 'main.home' }}">
+                        <a class="nav-link" href="{{ url_for('main.home') }}">Home</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ render_flashes() }}

@@ -1,0 +1,27 @@
+{% extends admin_base_template %}
+
+{% block body %}
+
+<div class="jumbotron">
+    <h2>Welcome to appname admin panel</h2>
+    <p>
+        <a class="btn btn-primary btn-lg" href="./user" role="button">View all Users</a>
+    </p>
+</div>
+
+<div class="row placeholders">
+    <div class="col-xs-6 col-sm-4 placeholder">
+        <h2> {{ user_count }} </h2>
+        <span class="text-muted">Number of Users</span>
+    </div>
+    <div class="col-xs-6 col-sm-4 placeholder">
+        <h2> {{ team_count }} </h2>
+        <span class="text-muted">Number of Teams </span>
+    </div>
+    <div class="col-xs-6 col-sm-4 placeholder">
+        <h2> {{ paid_count }} </h2>
+        <span class="text-muted">Number of Paid Plans </span>
+    </div>
+</div>
+
+{% endblock %}

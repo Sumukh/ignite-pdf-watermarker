@@ -1,0 +1,36 @@
+{% extends "tabler/dashboard_base.html" %}
+{% from "helpers/_formhelpers.html" import render_field %}
+
+{% block title %}appname account settings{% endblock %}
+
+{% block body %}
+
+<div class="my-3 my-md-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                {% include 'settings/sidebar.html' %}
+            </div>
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Profile Information</h3>
+                    </div>
+                    <form role="form" action="{{ url_for('user_settings.account') }}" method="post">
+                        <div class="card-body">
+                            {{ form.hidden_tag() }}
+                            {{ render_field(form.name, value=(current_user.full_name or ''), placeholder='Your Name') }}
+                        </div>
+                        <div class="card-footer text-left">
+                            <div class="d-flex">
+                                <button type="submit" class="btn btn-primary">Change</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

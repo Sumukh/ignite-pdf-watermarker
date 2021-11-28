@@ -1,0 +1,50 @@
+{% extends "tabler/minimal_base.html" %}
+{% from "helpers/_flashes.html" import render_flashes %}
+{% from "helpers/_formhelpers.html" import render_field %}
+
+{% block title %}appname Login Example{% endblock %}
+
+{% block body %}
+<div class="page-single">
+    <div class="container">
+        <div class="row">
+            <div class="col col-login mx-auto">
+                <div class="text-center mb-6">
+                    {{ render_flashes() }}
+                    <img src="{{ url_for('static', filename='public/ignite/ignite-logo@2x.png') }}" class="h-6" alt="Tabler">
+                </div>
+                <form role="form" class="card" action="{{ url_for('auth.login') }}" method="post">
+
+                    <div class="card-body p-6">
+                        <div class="card-title">Login to your account</div>
+                        {{ form.hidden_tag() }}
+                        {{ render_field(form.email, placeholder='test@example.com') }}
+                        {{ render_field(form.password, placeholder='Password') }}
+                        <small class="float-right mb-2">
+                            <a href="{{ url_for('auth.request_password_reset') }}"> Help! I forgot my password </a>
+                        </small>
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                </form>
+                <div class="text-center text-muted">
+                    <hr class="thin" />
+                </div>
+                {% if features.oauth %}
+                    <div class="text-center mt-4 mb-4">
+                        <a href="{{ url_for('google.login') }}" class="btn btn-primary btn-block">
+                            <i class="fa fa-google"></i> Login with Google
+                        </a>
+                    </div>
+                {% endif %}
+                <div class="text-center text-muted mt-3">
+                    Don't have an account yet? <a href="{{ url_for('auth.signup') }}" class="btn btn-primary btn-block">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% include 'tabler/_footer.html' with context %}
+
+{% endblock %}

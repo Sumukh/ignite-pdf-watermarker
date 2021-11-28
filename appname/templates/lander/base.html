@@ -1,0 +1,63 @@
+{% from "helpers/_flashes.html" import render_flashes %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        {% block meta %}
+            <meta name="description" content="">
+            <meta name="author" content="">
+        {% endblock %}
+
+        {% assets "common_css" %}
+            <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+        {% endassets %}
+
+        {% assets "landing_css" %}
+            <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+        {% endassets %}
+
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='public/ignite/ignite-icon.png') }}">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='public/ignite/ignite-icon.png') }}">
+
+        {% block css %}
+        {% endblock %}
+
+        {% block head_js %}
+            <!-- Pageblocking scripts should go here. Other scripts should go in the `js` block. -->
+        {% endblock %}
+
+    </head>
+
+    <body>
+        {% block body %}
+        {% endblock %}
+
+        {% assets "common_js" %}
+            <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+
+        {% block analytics_js %}
+            {% if config.SEGMENT_ANALYTICS_KEY  %}
+                <script>
+                    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+                    analytics.load("{{ config.SEGMENT_ANALYTICS_KEY }}");
+                    analytics.page();
+                    }}();
+                </script>
+            {% endif %}
+        {% endblock %}
+
+        {% block js %}
+        {% endblock %}
+    </body>
+
+</html>
