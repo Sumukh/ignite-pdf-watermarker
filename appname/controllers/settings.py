@@ -62,7 +62,7 @@ def oauth():
 def billing():
     if request.args.get('success'):
         flash('Processing your payment. You may need to refresh the page.', 'success')
-    return render_template('/settings/billing.html', plans=plans_by_name)
+    return render_template('/settings/billing.html', plans=plans_by_name, stripe_publishable_key=stripe.publishable_key)
 
 
 @settings_blueprint.route('/settings/api', methods=['GET', 'POST'])
