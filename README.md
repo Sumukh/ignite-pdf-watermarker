@@ -1,37 +1,6 @@
-[![Ignite](https://user-images.githubusercontent.com/882381/45938197-49cfb880-bf7c-11e8-91ea-94fffd9d054a.png)](https://github.com/sumukh/ignite)
+## Sample SaaS Boilerplate for Flask 
 
-# Ignite for Flask [![Flask PyTest CI](https://github.com/Sumukh/Ignite/actions/workflows/flask-pytest.yml/badge.svg)](https://github.com/Sumukh/Ignite/actions/workflows/flask-pytest.yml)
-
-Ignite is a scaffold for starting new Flask applications. It takes care of the boilerplate code (like User Registration, OAuth, Teams, and Billing), allowing you to focus on building your application. Ignite is built upon best practices for modern Flask applications.
-
-## Features
-| Features  |   Status | Details
-| ------------- | ------------- | -------- |
-| User Authentication  | ✅  | User Login, Registration, Forgot Password, Email Confirmation|
-| OAuth Login  | ✅ | Login or Register with Google, Twitter, Facebook, etc.
-| Teams/Groups | ✅  | Multi user teams & groups (with Invite Emails)
-| User Export & Deletion Request  | ✅ | Allows users to export their data  (for GDPR compliance)
-| API  | ✅  | API (with user tokens) users to access data
-| Stripe Product Checkout  | ✅  | One time item purchases with credit cards and receipts (using Stripe)
-| Heroku/Docker Deployment  | ✅  | Deployment instructions for some platforms. Works on AWS & Google Cloud
-| Send Emails | ✅  | Send email notifications from the application
-| Admin Dashboard | ✅  | Admin dashboard to edit data
-| File Uploads | ✅  | File uploads to cloud storage providers
-| Basic Test Suite | ✅  | Starting point for you to build out tests
-| VS Code Debugger & Editor | ✅  | Configured to make you productive
-| Tested on Windows 10, OSX, and Ubuntu | ✅  | Using Python 3
-| SaaS Recurring Billing  | 💲 (Requires purchasing a license to Ignite) | Team Billing, Usage Based Billing or Unlimited Plans  |
-| Commercial Usage  | 💲 (License Required) |  Commercial Usage requires a purchased license |
-| Video Content | 💲 | Available as part of [the Fullstack Flask course](https://www.newline.co/fullstack-flask/)
-
-## How to Buy
-
-
-| Store | Comes With | Price |
-| ------ | -------- | ------ |
-| Fullstack Flask Course | The Fullstack Flask Course & Book, hours of videos explaining how to build a SaaS in Flask, and a single license to Ignite Pro | [On Sale (for ~$199) at Newline  »](https://www.newline.co/fullstack-flask/) |
-| Commercial License | A license for usage on a single site | [($199) »](https://gumroad.com/l/xFvLo) |
-
+This is a demo app for FlaskCon 2021, based off of the Ignite boilerplate.
 
 ## Setup
 Usage of Python 3 is required. It can be installed [on Python.org](https://www.python.org/downloads/)
@@ -89,45 +58,10 @@ It is also designed to work well on other cloud providers such as AWS, Google Cl
 
 Documentation is currently provided for installations on Dokku.
 
-## Screenshots
-
-
-| Screenshot | Name |
-----------|-----
-| Login / Signup / OAuth / Password Reset |  ![login](documentation/screenshots/login.png) |
-| Dashboard  |  ![Dashboard](documentation/screenshots/dashboard.png) |
-| Saas Subscription Billing + Console  |  ![Billing](documentation/screenshots/billing.png) |
-| Teams  |  ![Team](documentation/screenshots/team.png) |
-| GDPR/Legal  |  ![GDPR](documentation/screenshots/gdpr.png) |
-| Admin  |  ![Admin](documentation/screenshots/admin.png) |
-| API Tokens |  ![API](documentation/screenshots/api.png) |
-| Delayed Jobs |  ![Jobs](documentation/screenshots/jobs.png) |
-| Emails |  ![Emails](documentation/screenshots/email.png) |
-| File Uploads |  ![Files](documentation/screenshots/file-uploads.png) |
-| Stripe Customer Portal Integration | ![Stripe](documentation/screenshots/stripe-console.png) |
-
 
 ## License
 
-This is a commercial product. You may purchase a license for commercial use at [Ignite Website](https://ignite.sumukh.me)
-
-Here's a summary:
-
-
-| Features | Ignite | (License) Ignite Premium |
-| ------------- | ------------- | ---------- |
-| Cost | Free | $199 per site |   |
-| Private Non Commercial Use | ✅ | ✅ |
-| Commercial Use  | No  |  ✅  |
-| Ability to remove "Powered by Ignite" footer | No  |  ✅  |
-| Video Tutorials | No  |  ✅  |
-| Re-license | No  |  Contact us |
-| Support | No  |  No |
-| Warranty  | Provided As-is  |  Provided As-is |
-| Refunds  | N/A  |  30 Day |
-
-
-You can purchase a license at the [Ignite Store](https://gumroad.com/l/xFvLo) or on [Newline as part of the Fullstack Flask course](https://www.newline.co/fullstack-flask/)
+You may use this project for non commericial projects. 
 
 For more detailed license information see LICENSE.md
 
