@@ -1,4 +1,7 @@
 {% extends "tabler/dashboard_base.html" %}
+{% from "helpers/_formhelpers.html" import render_field %}
+
+
 {% block title %}appname Home{% endblock %}
 
 {% block js %}
@@ -18,7 +21,28 @@
                 <h1 class="page-title">
                     {{team.name}} Dashboard
                 </h1>
-            </div>    
+            </div>
+            <div class="card">
+                    <div class="card-header">
+                            <h3 class="card-title">Watermark File</h3>
+                    </div>
+                    <form role="form" enctype="multipart/form-data" action="{{ url_for('dashboard_home.handle_watermark', team_id=team.id) }}" method="post">
+                        <div class="card-body">
+
+                            {{ watermark_form.hidden_tag() }}
+                            {{ render_field(watermark_form.watermark) }}
+                            {{ render_field(watermark_form.attachment) }}
+
+
+                        </div>
+                        <div class="card-footer text-left">
+                            <div class="d-flex">
+                                <button type="submit" class="btn btn-primary">Create Watermark</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
         </div>
     </div>
 {% endblock %}

@@ -33,12 +33,12 @@ def password_pdf(file, password, extraction=True):
 
 def watermark_pdf(watermark_text, document_file):
     wm = generate_watermark(watermark_text, (100, 100))
+    pdf_txt = pikepdf.open(document_file)
 
-    with pikepdf.open(wm) as pdf_wm, pikepdf.open(document_file) as pdf_txt:
+    with pikepdf.open(wm) as pdf_wm:
         for page in pdf_txt.pages:
             wm_page = pikepdf.Page(pdf_wm.pages[0])
             pdf_txt_page = pikepdf.Page(page)
             pdf_txt_page.add_overlay(wm_page, Rectangle(0, 0, 300, 300))
 
-        pdf_txt.save('out.pdf')
     return pdf_txt

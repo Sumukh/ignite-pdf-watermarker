@@ -36,6 +36,7 @@ class Config(object):
     # File Storage
     STORAGE_PROVIDER = os.getenv('STORAGE_PROVIDER', 'LOCAL')   # Can also be S3, GOOGLE_STORAGE, etc...
     STORAGE_KEY = os.getenv('STORAGE_KEY', "")
+    STORAGE_ALLOWED_EXTENSIONS = ["pdf", "docx"]
     STORAGE_SECRET = os.getenv('STORAGE_SECRET', ""),
     STORAGE_CONTAINER = os.getenv('STORAGE_CONTAINER', os.path.abspath(__file__ + "/../../tmp"))  # bucket name or cloud
     STORAGE_SERVER = False

@@ -1,9 +1,10 @@
-from flask import Blueprint, render_template, flash, abort, redirect, request, url_for, session
+from flask import (Blueprint, render_template, flash, abort,
+                   redirect, request, url_for, session, send_file)
 from flask_login import login_required, current_user
 
 from appname.extensions import storage
 from appname.models import db
-from appname.models.teams import Team, TeamMember
+from appname.models.teams import Team
 from appname.models.team_file import TeamFile
 from appname.forms import SimpleForm
 from appname.forms.files import FileForm
@@ -76,3 +77,6 @@ def destroy_file(team_id, file_id):
             file_object.delete()
         return redirect(url_for('.index', team_id=team.id))
     return abort(404)
+
+
+

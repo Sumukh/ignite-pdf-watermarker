@@ -47,8 +47,9 @@ pip install -r requirements.txt
 ```
 # Development
 # If using a virtual env: source env/bin/activate
-./manage.py resetdb # to seed data
-FLASK_APP=manage FLASK_ENV=development flask run
+./manage.py resetdb
+# ^ to seed data
+
 
 # Go to localhost:5000 in a browser and click on Login
 # Login with the following credentials "user@example.com", "test
@@ -57,9 +58,9 @@ FLASK_APP=manage FLASK_ENV=development flask run
 ```
 
 
-## Testing 
+## Testing
 
-Github Actions is configured to run tests and produce code coverage metrics. 
+Github Actions is configured to run tests and produce code coverage metrics.
 
 To run tests locally, try this command:
 ```
