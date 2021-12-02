@@ -1,6 +1,6 @@
 ## Sample SaaS Boilerplate for Flask 
 
-This is a demo app for FlaskCon 2021, based off of the Ignite boilerplate.
+This is a demo app for FlaskCon 2021, based off of the [Flask Ignite](https://github.com/sumukh/ignite) boilerplate.
 
 ## Setup
 Usage of Python 3 is required. It can be installed [on Python.org](https://www.python.org/downloads/)
